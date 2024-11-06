@@ -1,0 +1,26 @@
+# Ignore Xcode-specific files
+.DS_Store
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.xcodeproj/*
+*.xcworkspace/*
+
+# Ignore configuration files that contain API keys
+Config.xcconfig
+Secrets.plist
+*.env
+
+# Ignore system-generated cache files
+Pods/
+DerivedData/
+build/
+
+# Ignore files that may contain sensitive information
+*.key
+*.crt
+*.pem
+
+# Ignore files related to Cocoapods
+Podfile.lock
+Pods/
