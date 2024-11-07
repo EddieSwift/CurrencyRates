@@ -10,7 +10,7 @@ import Foundation
 class NetworkManager {
     static let shared = NetworkManager()
 
-    private let apiKey = "496e8d1ef581cab7ac8c576b824f55b6" // Replace with your actual API key
+    private let apiKey = "496e8d1ef581cab7ac8c576b824f55b6"
     private let baseURL = "https://api.coinlayer.com/api/live"
     
     private init() {}
