@@ -10,17 +10,18 @@ import Foundation
 class NetworkManager {
     static let shared = NetworkManager()
 
-    private let apiKey = "496e8d1ef581cab7ac8c576b824f55b6"
-    private let baseURL = "https://api.coinlayer.com/api/live"
-    
     private init() {}
 
     func fetchExchangeRates(completion: @escaping (Result<[CurrencyRate], Error>) -> Void) {
+        guard let baseURL = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as? String else { return }
+        
         guard var urlComponents = URLComponents(string: baseURL) else {
             completion(.failure(NetworkError.invalidURL))
             return
         }
 
+        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else { return }
+        
         urlComponents.queryItems = [
             URLQueryItem(name: "access_key", value: apiKey)
         ]

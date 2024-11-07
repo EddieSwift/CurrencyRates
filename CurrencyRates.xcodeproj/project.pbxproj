@@ -6,13 +6,31 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2C9AAFC92CDD0B9700C3243C /* CurrencyRatesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AAFBF2CDD0B9700C3243C /* CurrencyRatesApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2C9AAF6D2CDBA72800C3243C /* CurrencyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C9AAFBF2CDD0B9700C3243C /* CurrencyRatesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRatesApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2C9AAFCC2CDD0DB400C3243C /* Exceptions for "CurrencyRates" folder in "CurrencyRates" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Configuration/Info.plist,
+			);
+			target = 2C9AAF6C2CDBA72800C3243C /* CurrencyRates */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2C9AAF6F2CDBA72800C3243C /* CurrencyRates */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2C9AAFCC2CDD0DB400C3243C /* Exceptions for "CurrencyRates" folder in "CurrencyRates" target */,
+			);
 			path = CurrencyRates;
 			sourceTree = "<group>";
 		};
@@ -32,6 +50,7 @@
 		2C9AAF642CDBA72800C3243C = {
 			isa = PBXGroup;
 			children = (
+				2C9AAFBF2CDD0B9700C3243C /* CurrencyRatesApp.swift */,
 				2C9AAF6F2CDBA72800C3243C /* CurrencyRates */,
 				2C9AAF6E2CDBA72800C3243C /* Products */,
 			);
@@ -119,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C9AAFC92CDD0B9700C3243C /* CurrencyRatesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,9 +147,12 @@
 /* Begin XCBuildConfiguration section */
 		2C9AAF792CDBA72800C3243C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 2C9AAF6F2CDBA72800C3243C /* CurrencyRates */;
+			baseConfigurationReferenceRelativePath = Configuration/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BASE_URL = "https://api.coinlayer.com/api/live";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -190,9 +213,12 @@
 		};
 		2C9AAF7A2CDBA72800C3243C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 2C9AAF6F2CDBA72800C3243C /* CurrencyRates */;
+			baseConfigurationReferenceRelativePath = Configuration/Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BASE_URL = "https://api.coinlayer.com/api/live";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -255,6 +281,7 @@
 				DEVELOPMENT_TEAM = Z8345E68DL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CurrencyRates/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +311,7 @@
 				DEVELOPMENT_TEAM = Z8345E68DL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CurrencyRates/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
