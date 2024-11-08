@@ -37,7 +37,7 @@ struct CurrencyListView: View {
             }
             .listStyle(PlainListStyle())
             .refreshable {
-                viewModel.fetchExchangeRates()
+                _ = viewModel.fetchExchangeRates()
             }
         }
     }

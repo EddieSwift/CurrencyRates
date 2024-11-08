@@ -6,13 +6,32 @@
 //
 
 import Foundation
+import Network
 
 class NetworkManager {
     static let shared = NetworkManager()
 
-    private init() {}
+    private let monitor = NWPathMonitor()
+    private var isConnected = true
+
+    var isNetworkAvailable: Bool {
+        return isConnected
+    }
+    
+    private init() {
+        monitor.pathUpdateHandler = { path in
+            self.isConnected = path.status == .satisfied
+        }
+        let queue = DispatchQueue(label: "NetworkMonitor")
+        monitor.start(queue: queue)
+    }
 
     func fetchExchangeRates(completion: @escaping (Result<[CurrencyRate], Error>) -> Void) {
+        guard isNetworkAvailable else {
+            completion(.failure(NSError(domain: "", code: -1009, userInfo: [NSLocalizedDescriptionKey: "No Internet connection."])))
+            return
+        }
+        
         guard let baseURL = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as? String else { return }
         
         guard var urlComponents = URLComponents(string: baseURL) else {
@@ -66,7 +85,6 @@ class NetworkManager {
     }
 }
 
-// NetworkError enum to handle different error cases
 enum NetworkError: Error, LocalizedError {
     case invalidURL
     case invalidResponse

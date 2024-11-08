@@ -11,7 +11,7 @@ struct FavoriteRatesView: View {
     @ObservedObject var viewModel: CurrencyListViewModel
 
     var body: some View {
-        List(viewModel.favoriteRates, id: \.symbol) { rate in
+        List(viewModel.currencyRates.filter { $0.isFavorite }, id: \.symbol) { rate in
             HStack {
                 Text(rate.symbol)
                     .font(.headline)
