@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct CurrencyRate: Decodable {
+struct CurrencyRate: Decodable, Identifiable {
+    var id = UUID()
     let symbol: String
     let rate: Double
+    var isFavorite: Bool = false
 }
 
 struct CoinlayerResponse: Decodable {

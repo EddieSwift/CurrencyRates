@@ -8,36 +8,37 @@
 import SwiftUI
 
 struct CurrencyListView: View {
-    @StateObject private var viewModel = CurrencyListViewModel()
+    @ObservedObject var viewModel: CurrencyListViewModel
 
     var body: some View {
-        NavigationView {
-            VStack {
-                if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-                
-                List(viewModel.currencyRates, id: \.symbol) { rate in
-                    HStack {
-                        Text(rate.symbol)
-                            .font(.headline)
-                        Spacer()
-                        Text(String(format: "%.2f", rate.rate))
-                            .font(.subheadline)
+        VStack {
+            if let errorMessage = viewModel.errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+            
+            List(viewModel.currencyRates, id: \.symbol) { rate in
+                HStack {
+                    Text(rate.symbol)
+                        .font(.headline)
+                    Spacer()
+                    Text(String(format: "%.2f", rate.rate))
+                        .font(.subheadline)
+                    
+                    Button(action: {
+                        viewModel.toggleFavorite(for: rate)
+                    }) {
+                        Image(systemName: rate.isFavorite ? "star.fill" : "star")
+                            .foregroundColor(rate.isFavorite ? .yellow : .gray)
                     }
+                    .buttonStyle(BorderlessButtonStyle())
                 }
-                .listStyle(PlainListStyle())
-                .navigationTitle("Currency Exchange Rates")
-                .refreshable {
-                    viewModel.fetchExchangeRates()
-                }
+            }
+            .listStyle(PlainListStyle())
+            .refreshable {
+                viewModel.fetchExchangeRates()
             }
         }
     }
-}
-
-#Preview {
-    CurrencyListView()
 }
