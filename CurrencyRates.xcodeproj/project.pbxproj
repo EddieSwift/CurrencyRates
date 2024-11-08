@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2C9AAFC92CDD0B9700C3243C /* CurrencyRatesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AAFBF2CDD0B9700C3243C /* CurrencyRatesApp.swift */; };
+		2C9AAFD82CDE0EDC00C3243C /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 2C9AAFD72CDE0EDC00C3243C /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C9AAF6D2CDBA72800C3243C /* CurrencyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9AAFBF2CDD0B9700C3243C /* CurrencyRatesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRatesApp.swift; sourceTree = "<group>"; };
+		2C9AAFD72CDE0EDC00C3243C /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -53,6 +55,7 @@
 				2C9AAFBF2CDD0B9700C3243C /* CurrencyRatesApp.swift */,
 				2C9AAF6F2CDBA72800C3243C /* CurrencyRates */,
 				2C9AAF6E2CDBA72800C3243C /* Products */,
+				2C9AAFD72CDE0EDC00C3243C /* Readme.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C9AAFD82CDE0EDC00C3243C /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
